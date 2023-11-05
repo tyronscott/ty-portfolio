@@ -11,34 +11,28 @@ export class OtherSitesComponent implements OnInit {
 	constructor() {
 		this.otherSites = [
 			{
-				name: "Dartegnian.com",
-				link: "https://dartegnian.com",
-				image: "main",
-				description: "My main website and landing page. This essentially features basic information about me as a person and the things I like."
+				name: "CodeAssist",
+				link: "https://github.com/tyron12233/CodeAssist",
+				image: "codeassist",
+				description: "An Open Source Android IDE. This is my main project and is currently in development. It is a full-featured IDE that supports Java and Kotlin. My most popular project on GitHub with over 700 stars."
 			},
 			{
-				name: "Portfolio",
-				link: "https://portfolio.dartegnian.com",
-				image: "portfolio",
-				description: "This is essentially my online web portfolio. All my work and career-related info can be found here, as well as my core competencies as a developer."
+				name: "Sketchub",
+				link: "https://sketchub.in",
+				image: "sketchub",
+				description: "An app store for open source projects. It is a platform for developers to share their projects and for users to discover new apps."
 			},
 			{
-				name: "Blog",
-				link: "https://blog.dartegnian.com",
-				image: "blog",
-				description: "My new blog that's self-hosted and powered by Ghost CMS. Has a custom theme with my standard Material You color scheme."
+				name: "CodeRush",
+				link: "https://needed-wrench-production.up.railway.app/",
+				image: "coderush",
+				description: "An Open Source type racing game. It is a fun way to practice your typing skills. Made for a school event."
 			},
 			{
-				name: "Forever One (WG-Easy)",
-				link: "https://wg.dartegnian.com",
-				image: "wireguard",
-				description: "A fork of Emile Nijssen's project WG-Easy for managing a WireGuard VPN instance. This fork implements my standard Material You color scheme."
-			},
-			{
-				name: "Projects (Taiga)",
-				link: "https://projects.dartegnian.com",
-				image: "projects",
-				description: "A self-hosted instance of Taiga for the SCRUM management of my own projects and ideas."
+				name: "GroovyShell for Android",
+				link: "https://github.com/tyron12233/GroovyShellAndroid",
+				image: "groovyshell",
+				description: "An Open Source Android app that allows you to run Groovy scripts on your phone."
 			}
 		];
 	}

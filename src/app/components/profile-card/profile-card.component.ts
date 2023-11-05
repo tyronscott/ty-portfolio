@@ -8,8 +8,8 @@ import { AccentService } from 'src/app/services/accent-service.service';
 	styleUrls: ['./profile-card.component.scss']
 })
 export class ProfileCardComponent implements OnInit, OnDestroy {
-	name = "Dartegnian L. Velarde";
-	tagline = "Software engineer, web developer, Linux enthusiast, DevOps engineer";
+	name = "Tyron Scott C. Lucena";
+	tagline = "Software engineer, web developer, Linux enthusiast.";
 
 	images: Array<string>;
 	coverImage: string;

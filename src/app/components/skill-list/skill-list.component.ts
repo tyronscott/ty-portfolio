@@ -58,20 +58,8 @@ export class SkillListComponent implements OnInit {
 				text: "TypeScript"
 			},
 			{
-				icon: "simple-icons:jasmine",
-				text: "Jasmine"
-			},
-			{
-				icon: "file-icons:karma",
-				text: "Karma"
-			},
-			{
 				icon: "fa-brands:react",
 				text: "React"
-			},
-			{
-				icon: "file-icons:jsx-alt",
-				text: "JSX"
 			},
 			{
 				icon: "fa-brands:vuejs",
@@ -90,10 +78,6 @@ export class SkillListComponent implements OnInit {
 				text: "Sass"
 			},
 			{
-				icon: "file-icons:bem",
-				text: "B.E.M."
-			},
-			{
 				icon: "fa-brands:html5",
 				text: "HTML5"
 			},
@@ -109,13 +93,22 @@ export class SkillListComponent implements OnInit {
 
 		this.beWebStack = [
 			{
-				icon: "cib:php",
-				text: "PHP"
+				icon: "cib:node-js",
+				text: "Node.js"
+				
 			},
 			{
-				icon: "cib:laravel",
-				text: "Laravel"
+				icon: "cib:python",
+				text: "Python"
 			},
+			{
+				icon: "cib:java",
+				text: "Java",
+			},
+			{
+				icon: "cib:next-js",
+				text: "Next.js"
+			}
 		];
 
 		this.generalStack = [
@@ -148,25 +141,13 @@ export class SkillListComponent implements OnInit {
 				text: "VSCode"
 			},
 			{
-				icon: "cib:arch-linux",
-				text: "Arch Linux, btw"
+				icon: "cib:android",
+				text: "Android"
 			},
 			{
-				icon: "cib:jira",
-				text: "Jira"
-			},
-			{
-				icon: "cib:confluence",
-				text: "Confluence"
-			},
-			{
-				icon: "simple-icons:clickup",
-				text: "ClickUp"
-			},
-			{
-				icon: "tabler:seo",
-				text: "S.E.O."
-			},
+				icon: "cib:unity",
+				text: "Unity"
+			}
 		];
 	}
 

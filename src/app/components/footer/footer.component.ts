@@ -9,23 +9,18 @@ export class FooterComponent implements OnInit {
 	footerLinks = [
 		{
 			icon: "mail",
-			link: "mailto:contact@dartegnian.com",
-			text: "contact@dartegnian.com"
-		},
-		{
-			icon: "public",
-			link: "https://dartegnian.com/",
-			text: "https://dartegnian.com"
+			link: "mailto:contact.tyronscott@gmail.com",
+			text: "contact.tyronscott@gmail.com"
 		},
 		{
 			icon: "code",
-			link: "https://github.com/dartegnian",
-			text: "github.com/dartegnian"
+			link: "https://github.com/tyron12233",
+			text: "github.com/tyron12233"
 		},
 		{
 			icon: "work",
-			link: "https://www.linkedin.com/in/dartegnian/",
-			text: "linkedin.com/in/dartegnian"
+			link: "https://www.linkedin.com/in/tyron-scott-lucena-b176b2186/",
+			text: "linkedin.com/in/tyronscott"
 		},
 	];
 

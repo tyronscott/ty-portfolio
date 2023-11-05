@@ -6,6 +6,8 @@ import { Theme, argbFromHex, themeFromImage } from "@material/material-color-uti
 import { themeFromSourceColor, applyTheme } from "@material/material-color-utilities";
 import ColorThief, { RGBColor } from 'colorthief';
 
+const defaultColor = "#fe6262";
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -152,11 +154,11 @@ export class AccentService {
 				// theme = await themeFromImage(imgElement as HTMLImageElement);
 			} else {
 				console.error("No <img> element found within the parent element.");
-				theme = themeFromSourceColor(argbFromHex("#0099ff"));
+				theme = themeFromSourceColor(argbFromHex(defaultColor));
 			}
 		} else {
 			console.error("Parent element with ID '" + parentOfImg + "' not found.");
-			theme = themeFromSourceColor(argbFromHex("#0099ff"));
+			theme = themeFromSourceColor(argbFromHex(defaultColor));
 		}
 
 		if (theme) {
