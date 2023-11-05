@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1699194812492,
+  "timestamp": 1699195042897,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -340,7 +340,7 @@
     "/assets/svg/m3-octagonal-circle.svg": "87fcb352539478a9006c401b60c3d61e0ac4458f",
     "/assets/svg/m3-zany-square.svg": "bdbd8807872990786f49f3358644d3ea6e9b4b35",
     "/favicon.ico": "0df4d9d56cb11a551ba9fce8d64e341ed739c71a",
-    "/index.html": "400c32c7d3a4c07bc6df72ffc25e7a7a93993667",
+    "/index.html": "ca348e4184f1812b36d0dc3988976f9effebaa8a",
     "/main.85455a975870ab3d.js": "2dc83e16ef5405f40102e0467a0c16bea520e407",
     "/manifest.webmanifest": "8dedef6d043c4cefad0b2b1212a0b7a7bc282348",
     "/polyfills.609bd9809071cead.js": "5f4d7baa5d08b31b3ed97b45475c092cccd8e407",
