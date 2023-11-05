@@ -3,7 +3,7 @@
   "version": "1.4.7",
   "scripts": {
     "ng": "ng",
-    "start": "gulp compress && ng serve",
+    "start": "ng serve",
     "prebuild": "gulp compress",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
