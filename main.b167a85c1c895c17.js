@@ -17890,7 +17890,7 @@
           constructor() {
             this.otherSites = [
               {
-                name: "CodeAssist",
+                name: "CodeAssist2",
                 link: "https://github.com/tyron12233/CodeAssist",
                 image: "codeassist",
                 description:
