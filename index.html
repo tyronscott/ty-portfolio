@@ -142,6 +142,14 @@
             background-color: rgba(0, 0, 0, 0.32);
 			transition: opacity 0.3s ease-out;
         }
+
+		  dialog[open]::backdrop {
+             animation: fadeIn 0.3s ease-out forwards;
+        }
+        
+        dialog.closing::backdrop {
+            animation: fadeOut 0.3s ease-in forwards;
+        }
         
 		@starting-style {
             dialog[open] {
