@@ -275,46 +275,84 @@
 
 
 	<script>
-
-		const contactButton = document.querySelector('body > app-root > app-footer > footer > section > a:nth-child(1)');
-		
-        const closeModalBtn = document.getElementById('closeModalBtn');
-        const contactModal = document.getElementById('contactModal');
-        const contactForm = document.getElementById('contactForm');
-        const nameField = document.getElementById('name');
-        const emailField = document.getElementById('email');
-        const messageField = document.getElementById('message');
-
-		function validateField(field, validationFn) {
-            const formField = field.parentElement;
-            if (validationFn(field.value)) {
-                formField.classList.remove('invalid');
-                return true;
-            } else {
-                formField.classList.add('invalid');
-                return false;
-            }
-        }
-
-		
-
+		// Use a timeout to ensure the Vue.js app has rendered its content
 		setTimeout(() => {
-			contactButton.addEventListener('click', () => {
-				contactModal.showModal();
-			})
+			
+			// 1. Define the HTML for the dialog as a string
+			const dialogHTML = `
+				<dialog id="contactModal">
+					<div class="modal-header">
+						<h2>Contact Us</h2>
+						<button class="close-btn" id="closeModalBtn">&times;</button>
+					</div>
+					<form id="contactForm" novalidate>
+						<div class="form-field">
+							<input type="text" id="name" name="name" required placeholder=" ">
+							<label for="name">Name</label>
+							<div class="error-message">Name is required.</div>
+						</div>
+						<div class="form-field">
+							<input type="email" id="email" name="email" required placeholder=" ">
+							<label for="email">Email</label>
+							<div class="error-message">Please enter a valid email address.</div>
+						</div>
+						<div class="form-field">
+							<textarea id="message" name="message" required placeholder=" "></textarea>
+							<label for="message">Message</label>
+							<div class="error-message">Message is required.</div>
+						</div>
+						<div class="modal-actions">
+							<button type="submit" class="btn">Send Message</button>
+						</div>
+					</form>
+				</dialog>
+			`;
+
+			// 2. Inject the HTML string into the body
+			document.body.insertAdjacentHTML('beforeend', dialogHTML);
+
+
+			// 3. Now that the dialog is in the DOM, get references to all elements and add event listeners
+			const contactButton = document.querySelector('body > app-root > app-footer > footer > section > a:nth-child(1)');
+			const closeModalBtn = document.getElementById('closeModalBtn');
+			const contactModal = document.getElementById('contactModal');
+			const contactForm = document.getElementById('contactForm');
+			const nameField = document.getElementById('name');
+			const emailField = document.getElementById('email');
+			const messageField = document.getElementById('message');
+
+			// Check if the contact button exists before adding the listener
+			if (contactButton) {
+				contactButton.addEventListener('click', (event) => {
+					event.preventDefault(); // Prevent default anchor tag behavior
+					contactModal.showModal();
+				});
+			}
 
 			closeModalBtn.addEventListener('click', () => {
-         	   contactModal.close();
-        	});
+				contactModal.close();
+			});
 
-        	contactModal.addEventListener('click', (event) => {
-            	if (event.target === contactModal) {
-                	contactModal.close();
-            	}
-        	});
-
+			contactModal.addEventListener('click', (event) => {
+				if (event.target === contactModal) {
+					contactModal.close();
+				}
+			});
+			
+			// --- Validation Logic ---
+			function validateField(field, validationFn) {
+				const formField = field.parentElement;
+				if (validationFn(field.value)) {
+					formField.classList.remove('invalid');
+					return true;
+				} else {
+					formField.classList.add('invalid');
+					return false;
+				}
+			}
+			
 			const isNotEmpty = value => value.trim() !== '';
-       		const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+			const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
 			contactForm.addEventListener('submit', (event) => {
 				event.preventDefault();
@@ -329,7 +367,8 @@
 					contactForm.reset();
 				}
 			});
-		}, 1000);
+
+		}, 1000); // Wait 1 second (1000ms)
 	</script>
 <script src="runtime.c298b9a7749a8e52.js" type="module"></script><script src="polyfills.609bd9809071cead.js" type="module"></script><script src="main.b167a85c1c895c17.js" type="module"></script></body>
 
