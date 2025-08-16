@@ -17904,6 +17904,13 @@
                 image: 'paddle-frenzy',
                 description: "A game we quickly made for DLSL's enlistment week. A 'temple run' based game in a style of paddle frenzy. We used Three.js for rendering and supabase for backend."
               },
+
+              {
+                name: "Red Light Green Light",
+                name: 'https://github.com/dlsl-jpcs/gaap-2024',
+                image: 'red-light-green-light',
+                description: "A game inspired by the series 'Squid Game'. It features real-time motion detection through the player's phone. It has been played by 250+ concurrent players on the JPCS' General Assembly"
+              },
             
               {
                 name: "Sketchub",
