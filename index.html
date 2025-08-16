@@ -371,9 +371,27 @@
 				contactModal.close();
 			});
 
+			function closeDialog() {
+				contactModal.classList.add('closing');
+
+				// Define a handler for the animationend event
+				const onAnimationEnd = (event) => {
+					// Crucial Check: Only proceed if the dialog's own animation has ended
+					if (event.animationName === 'fadeOutScaleDown' && event.target === contactModal) {
+						contactModal.classList.remove('closing');
+						contactModal.close();
+						// Important: Clean up the event listener to prevent it from running again
+						contactModal.removeEventListener('animationend', onAnimationEnd);
+					}
+				};
+
+				// Add the event listener
+				contactModal.addEventListener('animationend', onAnimationEnd);
+			}
+
 			contactModal.addEventListener('click', (event) => {
 				if (event.target === contactModal) {
-					contactModal.close();
+					closeDialog();
 				}
 			});
 			
@@ -401,7 +419,7 @@
 
 				if (isNameValid && isEmailValid && isMessageValid) {
 					alert('Message sent successfully!');
-					contactModal.close();
+					closeDialog();
 					contactForm.reset();
 				}
 			});
