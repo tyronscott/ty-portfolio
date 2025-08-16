@@ -16638,7 +16638,8 @@
               },
             ]),
               (this.description =
-                "Tyron Scott is an adaptable full stack developer with a diverse skill set in multiple programming languages and technologies. He has a strong foundation in Java, C++, C#, and Kotlin, which he has applied to Android application development. Currently, he is expanding his expertise into web development with React.js. His experience also includes Dart and Flutter, demonstrating his ability to excel in the evolving tech landscape. Tyron's commitment to continuous learning makes him a valuable contributor to innovative and efficient project solutions.";
+                "Tyron Scott is an adaptable full stack developer with a diverse skill set in multiple programming languages and technologies. He has a strong foundation in Java, C++, C#, and Kotlin, which he has applied to Android application development. Currently, he is expanding his expertise into web development with React.js. His experience also includes Dart and Flutter, demonstrating his ability to excel in the evolving tech landscape. Tyron's commitment to continuous learning makes him a valuable contributor to innovative and efficient project solutions."
+            ))
              }
           ngOnInit() {}
           static #e = (this.ɵfac = function (r) {
@@ -17890,7 +17891,7 @@
           constructor() {
             this.otherSites = [
               {
-                name: "CodeAssist2",
+                name: "CodeAssist",
                 link: "https://github.com/tyron12233/CodeAssist",
                 image: "codeassist",
                 description:
