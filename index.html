@@ -90,11 +90,247 @@
 		gtag('js', new Date());
 		gtag('config', 'G-KXD5Z70RNK');
 </script>
+
+<style>
+        :root {
+            --md-sys-color-primary: #8D6E63;
+            --md-sys-color-on-primary: #FFFFFF;
+            --md-sys-color-primary-container: #D7CCC8;
+            --md-sys-color-on-primary-container: #3E2723;
+            --md-sys-color-surface: #FFFBFA;
+            --md-sys-color-on-surface: #201A18;
+            --md-sys-color-on-surface-variant: #53433F;
+            --md-sys-color-outline: #85736E;
+            --md-sys-color-error: #B3261E;
+            --md-sys-color-on-error: #FFFFFF;
+            --md-sys-color-scrim: rgba(0, 0, 0, 0.32);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .btn {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            border: none;
+            padding: 16px 32px;
+            border-radius: 28px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn:hover {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        dialog {
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            border: 1px solid var(--md-sys-color-outline);
+            border-radius: 28px;
+            padding: 24px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        dialog::backdrop {
+            background-color: var(--md-sys-color-scrim);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 24px;
+            color: var(--md-sys-color-on-surface);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        .form-field {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid var(--md-sys-color-outline);
+            border-radius: 16px;
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            font-size: 16px;
+        }
+
+        .form-field label {
+            position: absolute;
+            top: 18px;
+            left: 16px;
+            color: var(--md-sys-color-on-surface-variant);
+            pointer-events: none;
+            transition: all 0.2s ease;
+        }
+        
+        .form-field input:focus + label,
+        .form-field input:not(:placeholder-shown) + label,
+        .form-field textarea:focus + label,
+        .form-field textarea:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 12px;
+            font-size: 12px;
+            color: var(--md-sys-color-primary);
+            background-color: var(--md-sys-color-surface);
+            padding: 0 4px;
+        }
+        
+        .form-field input:focus,
+        .form-field textarea:focus {
+            outline: 2px solid var(--md-sys-color-primary);
+            border-color: var(--md-sys-color-primary);
+        }
+
+        .form-field textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .error-message {
+            color: var(--md-sys-color-error);
+            font-size: 12px;
+            display: none;
+            margin-top: 4px;
+            margin-left: 16px;
+        }
+
+        .form-field.invalid input,
+        .form-field.invalid textarea {
+            border-color: var(--md-sys-color-error);
+        }
+
+        .form-field.invalid .error-message {
+            display: block;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+    </style>
+
 <link rel="stylesheet" href="styles.438ebaaa62ff5cab.css"></head>
 
 <body class="material-theme">
 	<app-root></app-root>
 	<script defer="" src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+	<dialog id="contactModal">
+        <div class="modal-header">
+            <h2>Contact Us</h2>
+            <button class="close-btn" id="closeModalBtn">&times;</button>
+        </div>
+        <form id="contactForm" novalidate>
+            <div class="form-field">
+                <input type="text" id="name" name="name" required placeholder=" ">
+                <label for="name">Name</label>
+                <div class="error-message">Name is required.</div>
+            </div>
+            <div class="form-field">
+                <input type="email" id="email" name="email" required placeholder=" ">
+                <label for="email">Email</label>
+                <div class="error-message">Please enter a valid email address.</div>
+            </div>
+            <div class="form-field">
+                <textarea id="message" name="message" required placeholder=" "></textarea>
+                <label for="message">Message</label>
+                <div class="error-message">Message is required.</div>
+            </div>
+            <div class="modal-actions">
+                <button type="submit" class="btn">Send Message</button>
+            </div>
+        </form>
+    </dialog>
+
+
+	<script>
+
+		const contactButton = document.querySelector('body > app-root > app-footer > footer > section > a:nth-child(1)');
+		
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const contactModal = document.getElementById('contactModal');
+        const contactForm = document.getElementById('contactForm');
+        const nameField = document.getElementById('name');
+        const emailField = document.getElementById('email');
+        const messageField = document.getElementById('message');
+
+		function validateField(field, validationFn) {
+            const formField = field.parentElement;
+            if (validationFn(field.value)) {
+                formField.classList.remove('invalid');
+                return true;
+            } else {
+                formField.classList.add('invalid');
+                return false;
+            }
+        }
+
+		
+
+		setTimeout(() => {
+			contactButton.addEventListener('click', () => {
+				contactModal.showModal();
+			})
+
+			closeModalBtn.addEventListener('click', () => {
+         	   contactModal.close();
+        	});
+
+        	contactModal.addEventListener('click', (event) => {
+            	if (event.target === contactModal) {
+                	contactModal.close();
+            	}
+        	});
+
+			const isNotEmpty = value => value.trim() !== '';
+       		const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+			contactForm.addEventListener('submit', (event) => {
+				event.preventDefault();
+				
+				const isNameValid = validateField(nameField, isNotEmpty);
+				const isEmailValid = validateField(emailField, isValidEmail);
+				const isMessageValid = validateField(messageField, isNotEmpty);
+
+				if (isNameValid && isEmailValid && isMessageValid) {
+					alert('Message sent successfully!');
+					contactModal.close();
+					contactForm.reset();
+				}
+			});
+		}, 1000);
+	</script>
 <script src="runtime.c298b9a7749a8e52.js" type="module"></script><script src="polyfills.609bd9809071cead.js" type="module"></script><script src="main.b167a85c1c895c17.js" type="module"></script></body>
 
 </html>
