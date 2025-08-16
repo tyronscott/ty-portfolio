@@ -16638,8 +16638,8 @@
               },
             ]),
               (this.description =
-                "I am a dynamic and adaptable full stack developer, proficient in a diverse range of programming languages and technologies. With a solid foundation in Java, C++, C#, and Kotlin, I have honed my skills in Android app development and am currently venturing into the exciting world of web development with React.js. Furthermore, I bring to the table experience in Dart and Flutter, showcasing my ability to thrive in the ever-evolving tech landscape. My passion for coding and my dedication to staying at the forefront of technology make me a valuable asset in creating innovative and efficient solutions for a wide array of projects."));
-          }
+                "Tyron Scott is an adaptable full stack developer with a diverse skill set in multiple programming languages and technologies. He has a strong foundation in Java, C++, C#, and Kotlin, which he has applied to Android application development. Currently, he is expanding his expertise into web development with React.js. His experience also includes Dart and Flutter, demonstrating his ability to excel in the evolving tech landscape. Tyron's commitment to continuous learning makes him a valuable contributor to innovative and efficient project solutions.";
+             }
           ngOnInit() {}
           static #e = (this.ɵfac = function (r) {
             return new (r || e)();
@@ -16998,8 +16998,8 @@
                   S(4, "h2", 3),
                   N(
                     5,
-                    "Versatile Full Stack Developer with a Multilingual Toolkit: Mastering Java, C++, C#, Kotlin, Android, React.js, Dart, and Flutter!",
-                  ),
+                    "A third-year computer science student and founder of ANIMO.DEV, specializing in full-stack development across web and mobile platforms."
+                ),
                   M(),
                   S(6, "section", 4),
                   me(7, WL, 1, 4, "ng-container", 5),
@@ -17314,16 +17314,6 @@
                         "Founder of DLSL Developers Society, the center for tehcnological innovation at De La Salle Lipa.",
                     isNew: true,
                 },
-
-                {
-                    title: "AnimoChat",
-                    icon: "message",
-                    link: "https://animochat.com",
-                    description: [""],
-                    shortDescription: "Full stack developer of AnimoChat, the anonymous chat platform for LaSallians, by LaSallians",
-                    isNew: true,
-                },
-
 
 
                 {
@@ -17906,6 +17896,14 @@
                 description:
                   "An Open Source Android IDE. This is my main project and is currently in development. It is a full-featured IDE that supports Java and Kotlin. My most popular project on GitHub with over 700 stars.",
               },
+
+              {
+                name: "Paddle Frenzy",
+                link: 'https://github.com/dlsl-jpcs/eweek-2024/',
+                image: 'paddle-frenzy',
+                description: "A game we quickly made for DLSL's enlistment week. A 'temple run' based game in a style of paddle frenzy. We used Three.js for rendering and supabase for backend."
+              },
+            
               {
                 name: "Sketchub",
                 link: "https://sketchub.in",
